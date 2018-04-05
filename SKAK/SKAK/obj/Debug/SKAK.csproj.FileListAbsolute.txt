@@ -1,0 +1,7 @@
+C:\Users\Andr4\source\repos\SKAK\SKAK\bin\Debug\SKAK.exe.config
+C:\Users\Andr4\source\repos\SKAK\SKAK\bin\Debug\SKAK.exe
+C:\Users\Andr4\source\repos\SKAK\SKAK\bin\Debug\SKAK.pdb
+C:\Users\Andr4\source\repos\SKAK\SKAK\obj\Debug\SKAK.csproj.CoreCompileInputs.cache
+C:\Users\Andr4\source\repos\SKAK\SKAK\obj\Debug\SKAK.exe
+C:\Users\Andr4\source\repos\SKAK\SKAK\obj\Debug\SKAK.pdb
+C:\Users\Andr4\source\repos\SKAK\SKAK\obj\Debug\SKAK.csprojResolveAssemblyReference.cache
