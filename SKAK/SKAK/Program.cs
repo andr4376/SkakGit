@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,8 @@ namespace SKAK
 
     class Program
     {
+        static string fversion =
+            FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
 
         public const int dimension = 8; // const fordi de ikke skal ændres
 
@@ -268,7 +272,7 @@ namespace SKAK
             Console.WriteLine("   /    @@@@@@@@  @@@    @@@   @@@@@@@@@  @@@@@@@@   @@@@@@@@              /");
             Console.WriteLine("  /    @@@@@@@@  @@@    @@@   @@@@@@@@@  @@@@@@@@   @@@@@@@@   @@@ @@@    /");
             Console.WriteLine(" /_______________________________________________________________________/");
-            Console.WriteLine("                  A VIRTUAL CHESSBOARD MADE BY ANDREAS(TM) ");
+            Console.WriteLine("         A VIRTUAL CHESSBOARD MADE BY ANDREAS(TM) version: {0}",fversion);
 
             Console.WriteLine();
             Console.WriteLine("                              PAWN   =1");
