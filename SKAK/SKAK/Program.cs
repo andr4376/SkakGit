@@ -28,7 +28,7 @@ namespace SKAK
         {
             gitVersion = String.Empty;
             using (Stream stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("TryGitDescribe." + "version.txt"))
+                    .GetManifestResourceStream("SKAK." + "version.txt"))
             using (StreamReader reader = new StreamReader(stream))
             {
                 gitVersion = reader.ReadToEnd();
