@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -10,11 +11,14 @@ using System.Threading.Tasks;
 namespace SKAK
 {
 
+
     class Program
     {
         static string fversion =
             FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
 
+
+        static string gitVersion;
         public const int dimension = 8; // const fordi de ikke skal ændres
 
         public static string[,] grid = new string[dimension, dimension]; //public static string 2D array, da det bruges i flere metoder
@@ -22,6 +26,14 @@ namespace SKAK
 
         static void Main(string[] args)
         {
+            gitVersion = String.Empty;
+            using (Stream stream = Assembly.GetExecutingAssembly()
+                    .GetManifestResourceStream("TryGitDescribe." + "version.txt"))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                gitVersion = reader.ReadToEnd();
+            }
+
             Console.SetWindowSize(83, 21);
             StartScreen(); //startskærm
 
@@ -272,7 +284,7 @@ namespace SKAK
             Console.WriteLine("   /    @@@@@@@@  @@@    @@@   @@@@@@@@@  @@@@@@@@   @@@@@@@@              /");
             Console.WriteLine("  /    @@@@@@@@  @@@    @@@   @@@@@@@@@  @@@@@@@@   @@@@@@@@   @@@ @@@    /");
             Console.WriteLine(" /_______________________________________________________________________/");
-            Console.WriteLine("         A VIRTUAL CHESSBOARD MADE BY ANDREAS(TM) version: {0}",fversion);
+            Console.WriteLine("         A VIRTUAL CHESSBOARD MADE BY ANDREAS(TM) version: {0}",gitVersion);
 
             Console.WriteLine();
             Console.WriteLine("                              PAWN   =1");
